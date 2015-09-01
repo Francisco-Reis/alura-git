@@ -1,0 +1,19 @@
+-- git tag: --
+marca numeros de versões definidos
+v0.1
+v0.2
+
+-- git blame: --
+Historico detalhado chegando a dar informaçoes de cada linha
+
+-- git checkout: --
+É possivel acessar versões antigas e fazer alteracoes sem afetar a versao mais recente
+ex: git checkout v0.1
+É possível tb criar um branch com as mudanças feitas para persisti-las
+ex: git checkout -b novo_branch
+Pra voltar ao mais recente, pegue o branch master
+ex: git checkout master
+
+-- git diff: --
+Diferencia entre commits, tags, branchs e etc
+ex: git diff v0.1 v0.2
