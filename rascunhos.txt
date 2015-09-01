@@ -17,3 +17,14 @@ ex: git checkout master
 -- git diff: --
 Diferencia entre commits, tags, branchs e etc
 ex: git diff v0.1 v0.2
+
+-- git whatchanged --
+Similar ao git log porem mostra quais arquivos foram alterados, incluidos e removidos
+
+-- git remote --
+Para criar o repositorio remoto, quando já se tem um repositorio local, usar git remote
+ex: git remote add origin <url>
+Para ver o repositorio remoto existente, basta usar:
+ex: git remote
+Para enviar o primerio commit e criar o primeiro branch no rep. remoto:
+ex: git push origin master
