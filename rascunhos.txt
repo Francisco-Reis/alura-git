@@ -28,3 +28,17 @@ Para ver o repositorio remoto existente, basta usar:
 ex: git remote
 Para enviar o primerio commit e criar o primeiro branch no rep. remoto:
 ex: git push origin master
+
+-- git branch --
+Cria e verifica qual branch esta em uso no momento
+Ex: git branch alternativo (cria branch alterantivo)
+ex: git branch (Mostra todos os branchs e qual esta em uso)
+ex: git branch -r (mostra branchs do github)
+Para trocar de granch utiliza-se o git checkout.
+Ao enviar a brach para o GitHub, fazer da seguinte forma:
+ex: git push -u origin alternativo
+Criando branch onde aiinda nao existe com link
+ex: git branch -t alternativo origin/alternativo
+Removendo os branchs
+local: git branch -d alternativo
+remoto: git push origin :alternativo
