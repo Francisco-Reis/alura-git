@@ -8,11 +8,13 @@ Historico detalhado chegando a dar informaçoes de cada linha
 
 -- git checkout: --
 É possivel acessar versões antigas e fazer alteracoes sem afetar a versao mais recente
-ex: git checkout v0.1
+> git checkout v0.1
 É possível tb criar um branch com as mudanças feitas para persisti-las
-ex: git checkout -b novo_branch
+> git checkout -b novo_branch
 Pra voltar ao mais recente, pegue o branch master
-ex: git checkout master
+> git checkout master
+Ao usar sob um arquivo, pega o arquivo mais recente do repositorio:
+> git checkout arquivo.txt (Fazer isso pra eliminar mudaças indesejadas)
 
 -- git diff: --
 Diferencia entre commits, tags, branchs e etc
@@ -47,3 +49,49 @@ ex: git branch -t alternativo origin/alternativo
 Removendo os branchs
 local: git branch -d alternativo
 remoto: git push origin :alternativo
+
+-- git merge --
+Concatena branches com o branch master
+> git merge desenv -> Leva as mudanças da branck desenv para a master
+
+-- git rebase --
+Atualiza uma branch com base em outra
+> git rebase master desenv -> atualiza desenv com as adições do master
+Caso ocorra Conflito, devesse corrigir os arquivos conflitantes e continuar o rebase.
+Enquanto estamos nesse 'limbo', as alterações ficam em uma branch chamada (no branch)
+> git rebase --continue (tb existem as opções --abort e --skip)
+
+-- git reset --
+Para remover um commit indesejado (remove todos até la):
+> git reset <id_do_commit>
+Caso o arquivo já estiver com add (staging area), deve-se usar o seguinte comando antes
+O arquivo volta para o estado de trabalho:
+> git reset HEAD arquivo.txt
+
+-- git revert --
+Reverte um commit antigo sem perder os commits intermediarios
+> git revert <id_do_commit> (um novo commit será gerado fazendo as mudanças)
+
+-- git stash --
+Guarda alterações em um local temporario para aplicar correções e depois continuar.
+> git stash (é gerado in id de stash)
+Pra listar os stachs depois:
+> git stash list
+Pra aplicar:
+> git stach pop <id_do _stach>
+Pra remover da lista:
+> git stach drop <id_do _stach>
+
+-- git bisect --
+Para achar onde uma alteração indesejada foi feita, pode-se usar o bisect, marcando o HEAD como bad
+e um commit antigo como good, e assim o bisect vai indo ate achar onde foi feita a alteração.
+> git bisect start
+> git bisect bad HEAD
+> git bisect good <id_commit>
+A partir daqui são feitas iterações entre os commits marcados, e vai se marcando bad e good, até
+achar onde houve a mudança.
+
+-- Referencias a commits sem o hash --
+HEAD: ultimo commit
+HEAD~1 ou HEAD^: penultimo commit
+HEAD~n: Nsimo commit anterior ao head
