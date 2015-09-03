@@ -18,7 +18,32 @@ ex: git checkout master
 Diferencia entre commits, tags, branchs e etc
 ex: git diff v0.1 v0.2
 
+-- git whatchanged --
+Similar ao git log porem mostra quais arquivos foram alterados, incluidos e removidos
+
 -- 3 estados do GIT --
 Working directory: arquivos que estamos trabalhando, modificando
 Index: Staging area, area intermediaria antes do commit
 HEAD: Arquivos já commitados
+
+-- git remote --
+Para criar o repositorio remoto, quando já se tem um repositorio local, usar git remote
+ex: git remote add origin <url>
+Para ver o repositorio remoto existente, basta usar:
+ex: git remote
+Para enviar o primerio commit e criar o primeiro branch no rep. remoto:
+ex: git push origin master
+
+-- git branch --
+Cria e verifica qual branch esta em uso no momento
+Ex: git branch alternativo (cria branch alterantivo)
+ex: git branch (Mostra todos os branchs e qual esta em uso)
+ex: git branch -r (mostra branchs do github)
+Para trocar de granch utiliza-se o git checkout.
+Ao enviar a brach para o GitHub, fazer da seguinte forma:
+ex: git push -u origin alternativo
+Criando branch onde aiinda nao existe com link
+ex: git branch -t alternativo origin/alternativo
+Removendo os branchs
+local: git branch -d alternativo
+remoto: git push origin :alternativo
