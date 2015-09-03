@@ -17,3 +17,8 @@ ex: git checkout master
 -- git diff: --
 Diferencia entre commits, tags, branchs e etc
 ex: git diff v0.1 v0.2
+
+-- 3 estados do GIT --
+Working directory: arquivos que estamos trabalhando, modificando
+Index: Staging area, area intermediaria antes do commit
+HEAD: Arquivos já commitados
