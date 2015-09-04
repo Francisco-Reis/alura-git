@@ -95,3 +95,19 @@ achar onde houve a mudança.
 HEAD: ultimo commit
 HEAD~1 ou HEAD^: penultimo commit
 HEAD~n: Nsimo commit anterior ao head
+
+-- alias --
+Mudando o gitconfig e inserir alias ajuda a agilizar o processo
+O arquivo .gitconfig esta na pasta do usuário logado
+Ex:
+[alias]
+   ck = checkout (comando simples)
+   puxa = !git pull && git rebase desenv && git add -A (composto)
+
+-- pull request --
+Deve-se fazer o fork pelo site do github.
+Tambem adicionar o repositorio original para ver futuros commits
+
+-- git cherry-pick ---
+Pega um commit especifico de um outro branch e altera o master
+> git cherry-pick id_do_commit
